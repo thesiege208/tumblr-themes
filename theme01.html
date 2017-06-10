@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <!--
+        [ THEME : SNOW FLOWER ]
+        by The Siege
+
+        1. Editing allowed.
+        2. Do not claim theme as own.
+        3. Do not remove credit.
+        4. Do not redistribute.
+
+        06.06.2017
+        -->
+
+        <!-- colors -->
+        <meta name="color:background" content="#FFFFFF" />
+
+        <meta name="color:sidebar" content="#fde6ee" />
+        <meta name="color:blog title" content="#9b968b" />
+        <meta name="color:desc text" content="#9b968b" />
+        <meta name="color:desc links" content="#636059" />
+        <meta name="color:desc links hover" content="#faf5e8" />
+        <meta name="color:desc links bg hover" content="#636059" />
+
+        <meta name="color:pagination bg" content="#c4df9b" />
+        <meta name="color:pagination bg hover" content="" />
+        <meta name="color:pagination text" content="#7c7972" />
+        <meta name="color:pagination text hover" content="" />
+
+        <meta name="color:navigation bg" content="#dbcfe6" />
+        <meta name="color:navigation bg hover" content="#aa7bb6" />
+        <meta name="color:navigation text" content="#dbcfe6" />
+        <meta name="color:navigation text hover" content="#faf5e8" />
+
+        <meta name="color:link bg" content="#fdf2be" />
+        <meta name="color:link bg hover" content="#ffe777" />
+        <meta name="color:link text" content="#fdf2be" />
+        <meta name="color:link text hover" content="#faf5e8" />
+
+        <meta name="color:post background" content="#62f3f8" />
+        <meta name="color:body text" content="" />
+        <meta name="color:body bold" content="" />
+        <meta name="color:body italic" content="" />
+        <meta name="color:body links" content="" />
+        <meta name="color:body links hover" content="" />
+        <meta name="color:blockquote" content="" />
+
+        <meta name="color:post title" content="" />
+        <meta name="color:post title hover" content="" />
+        
+        <meta name="color:credit text" content="#fde6ee" />
+        <meta name="color:credit text hover" content="#b76a65" />
+
+        <!-- text -->
+        <meta name="text:link 1 URL" content="/" />
+        <meta name="text:link 2 URL" content="/" />
+        <meta name="text:link 3 URL" content="/" />
+        <meta name="text:link 4 URL" content="/" />
+        <meta name="text:link 1 title" content="l i n k 1" />
+        <meta name="text:link 2 title" content="l i n k 2" />
+        <meta name="text:link 3 title" content="l i n k 3" />
+        <meta name="text:link 4 title" content="l i n k 4" />
+
+        <!-- images -->
+        <meta name="image:background" content="https://68.media.tumblr.com/5bc095e31b8868ed1afe85b4404d53d6/tumblr_or7c6synwo1rttnjco1_500.png" />
+        <meta name="image:sidebar" content="https://static1.squarespace.com/static/5126a9c7e4b08a68a436da7c/56e0a1a9f8baf37c190469b8/5904ee32db29d6507823bbf3/1493495688262/CherryBlossom.gif" />
+        <!--
+        or: https://68.media.tumblr.com/33e8448e57bd9622fe374de750b181b2/tumblr_neqyq4QuLy1u1nuzeo1_500.gif 
+        or: https://static.tumblr.com/ac8c1d49bac13bd19cd187a76eec0fb0/8ekderf/rXgn3oly6/tumblr_static_81vfqvbud44k0go4gwwc8gog8.gif
+        -->
+
+        <!-- fonts -->
+        <meta name="font:sidebar" content="" />
+
+        <!-- code -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{Title}{block:PostSummary} - {PostSummary} {/block:PostSummary}
+        </title>
+        {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+
+        <link rel="shortcut icon" href="{Favicon}" />
+
+        <!-- js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- css -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+
+        <style>
+        .tmblr-iframe.tmblr-iframe--desktop-loggedin-controls.iframe-controls--desktop {
+            z-index:999999999!important;
+        }
+
+        body {
+            margin: 0;
+            word-wrap: break-word;
+            background-image: url({image:background});
+            background-attachment: fixed;
+            background-color: {color:background};
+        }
+
+        .container-fluid {
+            font-family: 'Crimson Text', serif;
+        }
+
+        .nav {
+            width: 12px;
+            height: 150px;
+            position: absolute;
+            text-decoration: none;
+            text-align: center;
+            font-size: 10px;
+            padding: 10px 3px 3px 3px;
+            float: left;
+            z-index: 0;
+            color: {color:navigation text};
+            background-color: {color:navigation bg};
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .nav:hover {
+            background-color: {color:navigation bg hover};
+            color: {color:navigation text hover};
+            padding-top: 0;
+        }
+        
+        #eel {
+            margin-left: 90px;
+        }
+        
+        #ee {
+            margin-left: 125px;
+        }
+        
+        #sam {
+            margin-left: 160px;
+        }
+        
+        #sa {
+            margin-left: 195px;
+        }
+        
+        #custom {
+            width: 50px;
+            height: 100px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #custom .links {
+            width: 12px;
+            margin-top: 250px;
+            position: absolute;
+            text-align: center;
+            font-size: 10px;
+            float: left;
+            border-radius: 2px;
+            color: {color:link text};
+            background-color: {color:link bg};
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        #custom .links:hover {
+            background-color: {color:link bg hover};
+            color: {color:link text hover};
+        }
+        
+        #yi {
+            margin-left: 90px;
+            height: 150px;
+            padding: 80px 3px 0 3px;
+        }
+        
+        #yi:hover {
+            height: 160px;
+            padding-top: 90px;
+        }
+        
+        #er {
+            margin-left: 125px;
+            height: 130px;
+            padding: 60px 3px 0 3px;
+        }
+        
+        #er:hover {
+            height: 140px;
+            padding-top: 70px;
+        }
+        
+        #san {
+            margin-left: 160px;
+            height: 200px;
+            padding: 130px 3px 0 3px;
+        }
+        
+        #san:hover {
+            height: 210px;
+            padding-top: 140px;
+        }
+        
+        #si {
+            margin-left: 195px;
+            height: 180px;
+            padding: 110px 3px 0 3px;
+        }
+        
+        #si:hover {
+            height: 190px;
+            padding-top: 120px;
+        }
+
+        #sidebar {
+            width: 300px;
+            left: 50px;
+            top: 50px;
+            font-size: 12px;
+        }
+
+        #avatar {
+            width: 200px;
+            height: 200px;
+            margin-left: 50px;
+            border-radius: 100px;
+            position: relative;
+            overflow: hidden;
+            background-color: {color:sidebar};
+        }
+
+        #avatar #info {
+            width: 180px;
+            height: 180px;
+            margin-top: 30px;
+            margin-left: 10px;
+            border-radius: 75px;
+            z-index: 1;
+            position: absolute;
+            text-align: center;
+        }
+        
+        #info #title {
+            color: {color:blog title};
+        }
+        
+        #info #desc {
+            color: {color:desc text};
+        }
+        
+        #info a {
+            color: {color:desc links};
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        
+        #info a:hover {
+            color: {color:desc links hover};
+            background-color: {color:desc links bg hover};
+        }
+        
+        #avatar #pic {
+            width: 180px;
+            height: 180px;
+            margin-top: 10px;
+            margin-left: 10px;
+            border-radius: 90px;
+            overflow: hidden;
+        }
+
+        #pic img {
+            width: 180px;
+            height: 180px;
+            border-radius: 90px;
+            z-index: 2;
+            position: relative;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        
+        #pic img:hover {
+            margin-left: -180px;
+        }
+        
+        #pagination {
+            width: 180px;
+            text-align: center;
+            font-size: 12px;
+            color: {color:pagination text};
+        }
+        
+        #pagination a {
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            background-color: {color:pagination bg};
+        }
+
+        #content {
+            float: right;
+            margin-top: 20px;
+            margin-right: 50px;
+            width:; 520px;
+        }
+        
+        .posts {
+            background-color: {color:post background};
+            opacity: 0.2;
+            width: 500px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .photo {
+            width: 500px;
+            display: block;
+        }
+        
+        #quote {
+            font-size: 20px;
+            text-align: left;
+        }
+        
+        #src {
+            font-size: 14px;
+            text-align: right;
+        }
+        
+        #credit {
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            left: 10px;
+            bottom: 10px;
+            background-color: {color:sidebar};
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+            line-height: 12px;
+            position: absolute;
+        }
+        
+        #credit a {
+            color: {color:credit text};
+            text-decoration: none;
+        }
+        
+        #credit a:hover {
+            color: {color:credit text hover};
+        }
+
+        {CustomCSS}
+        </style>
+    </head>
+
+    <body>
+        <!-- layout -->
+        <div class="container-fluid">
+            <!-- navigation -->
+            <a href="/">
+                <div class="nav" id="eel">h o m e</div>
+            </a>
+            <a href="/ask">
+                <div class="nav" id="ee">a s k</div>
+            </a>
+            <a href="/archive">
+                <div class="nav" id="sam">a r c h i v e</div>
+            </a>
+            <a href="/submit">
+                <div class="nav" id="sa">s u b m i t</div>
+            </a>
+            <!-- custom links -->
+            <div id="custom">
+                {block:iflink1url}
+                <a href="{text:link 1 URL}">
+                    <div class="links" id="yi">{text:link 1 title}</div>
+                </a>
+                {/block:iflink1url}
+                {block:iflink2url}
+                <a href="{text:link 2 URL}">
+                    <div class="links" id="er">{text:link 2 title}</div>
+                </a>
+                {/block:iflink2url}
+                {block:iflink3url}
+                <a href="{text:link 3 URL}">
+                    <div class="links" id="san">{text:link 3 title}</div>
+                </a>
+                {/block:iflink3url}
+                {block:iflink4url}
+                <a href="{text:link 4 URL}">
+                    <div class="links" id="si">{text:link 4 title}</div>
+                </a>
+                {/block:iflink4url}
+            </div>
+            <!-- sidebar -->
+            <div id="sidebar">
+                <!-- avatar -->
+                <div id="avatar">
+                    <div id="info">
+                        <p id="title">{title}</p>
+                        <p id="desc">{description}</p>
+                    </div>
+                    <div id="pic">
+                        <img src="{image:sidebar}">
+                    </div>
+                </div>
+            </div>
+            <!-- pagination -->
+            {block:Pagination}
+            <div id="pagination">
+                {block:PreviousPage}
+                <a href="{PreviousPage}"><<</a>
+                {/block:PreviousPage}
+                {block:NextPage}
+                <a href="{NextPage}">>></a>
+                {/block:NextPage}
+            </div>
+            {/block:Pagination}
+
+            <!-- posts -->
+            <div id="content">
+                {block:Posts}
+                <div class="posts">
+
+                {block:Quote}
+                <div id="quote">"{Quote}" /</div>
+                <div id="src">/ {Source}</div>
+                {/block:Quote}
+
+                {block:Photo}
+                {LinkOpenTag}
+                <div class="photo"><img src="{PhotoURL-500}"></div>
+                {LinkCloseTag}
+                {block:IfShowCaptions}{block:Caption}
+                <div class="caption">{Caption}</div>{/block:Caption}{/block:IfShowCaptions}
+                {block:IfNotShowCaptions}{block:PermalinkPage}{block:Caption}
+                <div class="caption">{Caption}</div>
+                {/block:Caption}{/block:PermalinkPage}{/block:IfNotShowCaptions}
+                {/block:Photo}
+
+                {block:Photoset}
+                <div class="photo">
+                    <!-- stuff -->
+                </div>
+                {/block:Photoset}
+
+                {block:Link}
+                {/block:Link}
+
+                {block:Chat}
+                {/block:Chat}
+
+                {block:Audio}
+                {/block:Audio}
+
+                {block:Text}
+                {/block:Text}
+
+                {block:Answer}
+                {/block:Answer}
+
+                {block:Video}
+                {/block:Video}
+
+                <!-- index? permalinks, tags, notes -->
+
+                </div>
+                {/block:Posts}
+            </div>
+
+            <!-- credit -->
+            <div id="credit">
+                <a href="show-me-the-code.tumblr.com">;</a>
+            </div>
+        </div>
+    </body>
+</html>
