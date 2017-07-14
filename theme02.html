@@ -263,8 +263,8 @@
             display: none;
             
             {block:ifmusicplayer}
-            display: inline;
-            margin-top: 10px;
+            display: inline-block;
+            margin-top: 25px;
             margin-left: -5px;
             opacity: 0;
             -webkit-transition: all 0.5s ease-in-out;
@@ -277,7 +277,8 @@
         
         #billy:hover #music {
             {block:ifmusicplayer}
-            display: inline;
+            display: inline-block;
+            margin-top: 25px;
             margin-left: 20px;
             opacity: 1;
             {/block:ifmusicplayer}
@@ -687,9 +688,9 @@
                 </a>
                 {block:ifmusicplayer}
                 <div id="billy">
+                    <img src="http://static.tumblr.com/uo5axex/oWyosdt3w/music.gif">
                     <div id="music">{text:billy music player code}</div>
-                        <img src="http://static.tumblr.com/uo5axex/oWyosdt3w/music.gif">
-                    </div>
+                </div>
                 {/block:ifmusicplayer}
             </div>
         </div>
