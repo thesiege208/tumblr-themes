@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en">
+<!--<![endif]-->
+    <head>
+        <!--
+        [ THEME 02 : BLANK SPACE ]
+        by The Siege
+
+        - Editing allowed.
+        - Do not claim theme as own.
+        - Do not remove credit.
+        - Do not redistribute.
+
+        07.10.2017
+        -->
+
+        <!-- colors -->
+        <meta name="color:background" content="#ffffff" />
+        <meta name="color:header" content="#111111" />
+
+        <meta name="color:scrollbar" content="#e80d0d" />
+        <meta name="color:scrollbar bg" content="#ffffff">
+
+        <meta name="color:sidebar" content="#ffffff" />
+        <meta name="color:desc link text" content="#aaaaaa" />
+
+        <meta name="color:link text" content="#eeeeee" />
+        <meta name="color:link text hover" content="#e80d0d" />
+
+        <meta name="color:post background" content="#ffffff" />
+        <meta name="color:body" content="#222222" />
+        <meta name="color:body links text" content="#cccccc" />
+        <meta name="color:blockquote text" content="#eeeeee" />
+
+        <meta name="color:post title text" content="#222222" />
+        <meta name="color:post title bg" content="#fffbed" />
+        <meta name="color:post title hover bg" content="" />
+        
+        <meta name="color:chat odd background" content="#111111" />
+        <meta name="color:chat odd text" content="#ffffff" />
+        <meta name="color:chat even background" content="#ffffff" />
+        <meta name="color:chat even text" content="#111111" />
+        
+        <meta name="color:ask background" content="#111111" />
+        <meta name="color:asker" content="#eeeeee" />
+        <meta name="color:asker link" content="#dddddd" />
+
+        <meta name="color:tags text" content="#ffffff" />
+        <meta name="color:tags background" content="rgba(0, 0, 0, 0.5)" />
+        <meta name="color:tags link text" content="#ffffff" />
+        <meta name="color:perma background" content="#cccccc" />
+
+        <!-- text -->
+        <meta name="text:billy music player code" content="." />
+        <meta name="text:link 1 URL" content="/" />
+        <meta name="text:link 2 URL" content="/" />
+        <meta name="text:link 3 URL" content="/" />
+        <meta name="text:link 4 URL" content="/" />
+        <meta name="text:link 5 URL" content="/" />
+        <meta name="text:link 1 title" content="link 1" />
+        <meta name="text:link 2 title" content="link 2" />
+        <meta name="text:link 3 title" content="link 3" />
+        <meta name="text:link 4 title" content="link 4" />
+        <meta name="text:link 5 title" content="link 5" />
+        
+        <!-- toggles -->
+        <meta name="if:show captions" content="0" />
+        <meta name="if:music player" content="0" />
+
+        <!-- code -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{Title}{block:PostSummary} - {PostSummary} {/block:PostSummary}
+        </title>
+        {block:Description}
+        <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+
+        <link rel="shortcut icon" href="{Favicon}" />
+
+        <!-- js -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/991fe5fb1a.js"></script>
+        <script src="http://static.tumblr.com/6hsqxdt/vmwm2rb4g/infinitescrolling.js"></script>
+        <script src="http://static.tumblr.com/6hsqxdt/QBym35odk/jquery.masonry.js"></script>
+         
+        <script>
+        $(function(){
+            var $container = $('#content');
+            $container.imagesLoaded(function(){
+                var $grid = $container.masonry({
+                    itemSelector : '.post',
+                    gutterWidth : 20,
+                    isFitWidth: true
+                });
+            });
+        });
+        </script>
+
+        <!-- css -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+        <style>
+        .tmblr-iframe.tmblr-iframe--desktop-loggedin-controls.iframe-controls--desktop {
+            z-index:999999999!important;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: {color:background};
+            font-family: 'Bellefair', serif;
+        }
+        
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: {color:scrollbar bg};
+        }
+
+        ::-webkit-scrollbar-thumb:vertical {
+            width: 10px;
+            border-radius: 1px;
+            -moz-border-radius: 1px;
+            -webkit-border-radius: 1px;
+            -o-border-radius: 1px;
+            background-color: {color:scrollbar};
+        }
+
+        #header {
+            min-width: 100%;
+            height: 30px;
+            background-color: {color:header};
+            color: {color:link text};
+            text-transform: lowercase;
+            font-size: 1.5rem;
+            position: fixed;
+            padding-top: 5px;
+            z-index: 101;
+        }
+
+        #header p {
+            float: left;
+            padding-left: 10px;
+        }
+
+        #custom {
+            float: right;
+            padding-right: 10px;
+        }
+
+        #header a {
+            color: {color:link text};
+            text-decoration: none;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .glyphicon {
+            font-size: 1rem;
+        }
+
+        #header a:hover {
+            color: {color:link text hover};
+        }
+
+        .container-fluid {
+            padding: 0;
+            margin-left: 25%;
+            top: 50px;
+            position: relative;
+            z-index: 100;
+            
+            {block:permalinkpage}
+            margin-left: 40%;
+            {/block:permalinkpage}
+        }
+
+        #sidebar {
+            margin-left: -1px;
+            height: 222px;
+            width: 55px;
+            border: 1px solid {color:blockquote text};
+            border-radius: 1px;
+            margin-top: 15%;
+            position: fixed;
+
+            {block:ifmusicplayer}
+            height: 252px;
+            {/block:ifmusicplayer}
+        }
+
+        #nav {
+            margin-left: -2px;
+            height: 210px;
+            width: 50px;
+            border: 1px solid {color:blockquote text};
+            border-radius: 1px;
+            margin-top: 5px;
+            position: fixed;
+            text-align: center;
+            
+            {block:ifmusicplayer}
+            height: 240px;
+            {/block:ifmusicplayer}
+        }
+        
+        #nav span {
+            font-size: 2rem;
+            padding-top: 15px;
+            color: {color:desc link text};
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            -ms-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        #nav a {
+            text-decoration: none;
+        }
+        
+        #nav span:hover {
+            color: {color:link text hover};
+        }
+        
+        #billy img {
+            display: none;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+
+            {block:ifmusicplayer}
+            padding-top: 15px;
+            display: inline;
+            {/block:ifmusicplayer}
+        }
+        
+        #music {
+            display: none;
+            
+            {block:ifmusicplayer}
+            display: inline;
+            margin-top: 10px;
+            margin-left: -5px;
+            opacity: 0;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            {/block:ifmusicplayer}
+        }
+        
+        #billy:hover #music {
+            {block:ifmusicplayer}
+            display: inline;
+            margin-left: 20px;
+            opacity: 1;
+            {/block:ifmusicplayer}
+        }
+        
+        #billy:hover img {
+            opacity: 0;
+            margin-left: 5px;
+        }
+        
+        .tumblrAutoPager_page_info, .tumblrAutoPager_page_separator {
+            display: none;
+        }
+
+        #infscr-loading {
+            display: none;
+        }
+
+        .pagination {
+            position: fixed;
+            margin-top: 20%;
+            margin-left: 53px;
+            font-size: 1rem;
+        }
+        
+        .pagination a {
+            text-decoration: none;
+            color: {color:desc link text};
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            -o-transition: all 0.5s ease-in-out;
+            -ms-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .pagination a:hover {
+            color: {color:link text hover};
+        }
+
+        #prev:hover, #next:hover {
+            margin-left: 5px;
+        }
+        
+        #prev, #next {
+            width: 20px;
+            height: 20px;
+            border: 1px solid {color:blockquote text};
+            border-radius: 1px;
+            padding: 2px;
+            text-align: center;
+            display: block;
+        }
+        
+        #next {
+            margin-top: 5px;
+        }
+        
+        .post {
+            width: 250px;
+            float: left;
+            margin-bottom: 5px;
+        }
+        
+        .post img {
+            max-width: 250px;
+        }
+        
+        .post:hover .tags, .post:hover .overlay, .post:hover #permalink {
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+        
+        .quotecontent {
+            width: 250px;
+            color: {color:body};
+        }
+        
+        #quote {
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+        }
+        
+        #src {
+            text-align: right;
+            font-family: 'Bellefair', serif;
+            font-size: 1.5rem;
+            text-transform: lowercase;
+            padding-top: 5px;
+        }
+        
+        .quotecontent span {
+            font-size: 2rem;
+        }
+        
+        .photo.single {
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            text-transform: lowercase;
+            text-align: center;
+            width: 250px;
+            background-color: {color:header};
+            color: {color:link text};
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .text {
+            width: 250px;
+            margin: 5px 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            text-transform: lowercase;
+        }
+        
+        .text a {
+            text-decoration: none;
+            color: {color:body links text};
+        }
+        
+        .text a:hover {
+            color: {color:link text hover};
+        }
+        
+        .post blockquote {
+            border-left: 2px solid {color:blockquote text};
+            font-size: 1rem;
+            margin: 5px 5px;
+            padding: 0 0 0 5px;
+        }
+        
+        .post blockquote img {
+            max-width: 100%;
+        }
+        
+        a.link {
+            text-decoration: none;
+        }
+        
+        .title:hover {
+            color: {color:link text hover};
+            background-color: {color:background};
+            font-size: 1.5rem;
+        }
+        
+        .odd .line {
+            background-color: {color:chat odd background};
+            padding: 5px;
+            color: {color:chat odd text};
+        }
+
+        .even .line {
+            background-color: {color:chat even background};
+            padding: 5px;
+            color: {color:chat even text};
+        }
+
+        .line .name {
+            padding: 0 5px;
+        }
+        
+        #album {
+            margin-bottom: 5px;
+        }
+        
+        .albumart {
+            width: 55px;
+            position: absolute;
+            filter: gray;
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        .albumart:hover, .audio:hover .albumart {
+            -webkit-filter: grayscale(0);
+            filter: none;
+        }
+        
+        .audio {
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            overflow: hidden;
+            margin-top: 22px;
+            margin-left: 22px;
+            opacity: 0.4;
+            filter: alpha(opacity=40);
+            -moz-opacity: 0.4;
+            -khtml-opacity: 0.4;
+        }
+        
+        #audioinfo {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: lowercase;
+            font-size: 1rem;
+            width: 250px;
+            padding-left: 60px;
+        }
+        
+        .audioline {
+            color: {color:body text};
+        }
+
+        .ask {
+            max-width: 180px;
+            border-radius: 5px;
+            padding: 2px 5px;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            margin-left: 10px;
+            display: inline-block;
+            position: absolute;
+            background-color: {color:chat odd background};
+            color: {color:chat even background};
+        }
+        
+        .asker a {
+            text-decoration: none;
+            color: {color:chat even background};
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        #carrot {
+            margin-left: 5px;
+            position: absolute;
+            color: {color:chat odd background};
+        }
+        
+        .overlay {
+            background-color: {color:tags background};
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            text-align: right;
+            position: absolute;
+            width: 250px;
+            max-height: 75px;
+            z-index: 10;
+            overflow-y: auto;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+            
+            {block:permalinkpage}
+            display: none;
+            {/block:permalinkpage}
+        }
+        
+        .overlay .tags {
+            padding: 5px 10px;
+        }
+        
+        .overlay .tags a {
+            color: {color:tags text};
+            text-decoration: none;
+        }
+        
+        .overlay .tags a:hover, .perma a:hover, #permalink a:hover, #notecontainer li a:hover, .perma .tags a:hover, .asker a:hover {
+            color: {color:link text hover};
+        }
+        
+        #permalink {
+            text-align: right;
+            padding: 5px 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            background-color: {color:perma background};
+            width: 250px;
+            height: 20px;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        #permalink a {
+            text-decoration: none;
+            color: {color:tags text};
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+
+        #plink {
+            float: left;
+        }
+        
+        .fa-heart-o {
+            padding-right: 5px;
+        }
+        
+        .perma, #notecontainer, #notecontainer li a {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            color: {color:body links text};
+            padding: 5px 0;
+            text-decoration: none;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        #notecontainer, .perma a, .perma .tags a {
+            color: {color:body links text};
+            text-decoration: none;
+            -webkit-transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -o-transition: all 0.4s ease-in-out;
+            -ms-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+        }
+        
+        #notecontainer li.note {
+            padding-bottom: 5px;
+        }
+        
+        #notecontainer img.avatar {
+            padding-right: 5px;
+        }
+
+        {CustomCSS}
+        </style>
+    </head>
+
+    <body>
+        <!-- header with custom links -->
+        <div id="header">
+            <p><a href="/">{Title}</a></p>
+            <div id="custom">
+                {block:iflink1url}
+                <a href="{text:link 1 URL}" title="{text:link 1 title}">
+                    <span class="glyphicon glyphicon-link"></span>
+                </a>
+                {/block:iflink1url}
+                |
+                {block:iflink2url}
+                <a href="{text:link 2 URL}" title="{text:link 2 title}">
+                    <span class="glyphicon glyphicon-link"></span>
+                </a>
+                {/block:iflink2url}
+                |
+                {block:iflink3url}
+                <a href="{text:link 3 URL}" title="{text:link 3 title}">
+                    <span class="glyphicon glyphicon-link"></span>
+                </a>
+                {/block:iflink3url}
+                |
+                {block:iflink4url}
+                <a href="{text:link 4 URL}" title="{text:link 4 title}">
+                    <span class="glyphicon glyphicon-link"></span>
+                </a>
+                {/block:iflink4url}
+                |
+                {block:iflink5url}
+                <a href="{text:link 5 URL}" title="{text:link 5 title}">
+                    <span class="glyphicon glyphicon-link"></span>
+                </a>
+                {/block:iflink5url}
+            </div>
+        </div>
+        <!-- sidebar -->
+        <div id="sidebar">
+            <!-- nav, billy -->
+            <div id="nav">
+                <a href="/" title="home">
+                    <span class="glyphicon glyphicon-home"></span>
+                </a>
+                <br />
+                <a href="/ask" title="ask">
+                    <span class="fa fa-question" style="font-size:2.5rem;"></span>
+                </a>
+                <br />
+                <a href="/submit" title="submit">
+                    <span class="fa fa-send"></span>
+                </a>
+                <br />
+                <a href="/archive" title="archive">
+                    <span class="fa fa-calendar"></span>
+                </a>
+                <br />
+                <a href="show-me-the-code.tumblr.com" title="credit">
+                    <span class="fa fa-bolt"></span>
+                </a>
+                {block:ifmusicplayer}
+                <div id="billy">
+                    <div id="music">{text:billy music player code}</div>
+                        <img src="http://static.tumblr.com/uo5axex/oWyosdt3w/music.gif">
+                    </div>
+                {/block:ifmusicplayer}
+            </div>
+        </div>
+        <!-- pagination -->
+        <div class="pagination">
+        {block:Pagination}
+        {block:PreviousPage}<a href="{PreviousPage}" id="prev">⟵</a>{/block:PreviousPage}
+        {block:NextPage}<a href="{NextPage}" id="next">⟶</a>{/block:NextPage}
+        {/block:Pagination}
+        </div>
+        <!-- post content -->
+        <div class="container-fluid">
+            <!-- posts -->
+            <div id="content">
+                {block:Posts}
+                <div class="post">
+                
+                <div class="overlay">
+                    {block:HasTags}
+                    <div class="tags">
+                        {block:tags}
+                        <a href="{tagurl}"><span class="fa fa-tag"></span> {tag}</a>
+                        <br />
+                        {/block:tags}
+                    </div>
+                    {/block:HasTags}
+                </div>
+
+                {block:Quote}
+                <div class="quotecontent">
+                    <div id="quote">"{Quote}"</div>
+                    <div id="src">+ {Source}</div>
+                </div>
+                {/block:Quote}
+
+                {block:Photo}
+                {LinkOpenTag}
+                <div class="photo single">
+                <img src="{PhotoURL-250}">
+                </div>
+                {LinkCloseTag}
+                {block:IfShowCaptions}{block:Caption}
+                <div class="text">{Caption}</div>{/block:Caption}{/block:IfShowCaptions}
+                {block:IfNotShowCaptions}{block:PermalinkPage}{block:Caption}
+                <div class="text">{Caption}</div>
+                {/block:Caption}{/block:PermalinkPage}{/block:IfNotShowCaptions}
+                {/block:Photo}
+
+                {block:Photoset}
+                <div class="photo">
+                {Photoset-250}
+                </div>
+                {block:IfShowCaptions}{block:Caption}
+                <div class="text">{Caption}</div>{/block:Caption}{/block:IfShowCaptions}
+                {block:IfNotShowCaptions}{block:PermalinkPage}{block:Caption}
+                <div class="text">{Caption}</div>
+                {/block:Caption}{/block:PermalinkPage}{/block:IfNotShowCaptions}
+                {/block:Photoset}
+
+                {block:Link}
+                <a href="{URL}" class="link">
+                    <div class="title">{Name}</div>
+                </a>
+                {block:Description}
+                <div class="text">{description}</div>
+                {/block:Description}
+                {/block:Link}
+
+                {block:Chat}
+                {block:Title}
+                <div class="title">{Title}</div>
+                {/block:Title}
+                <div class="text">
+                    {block:Lines}
+                    <div class="{Alt}">
+                        <div class="line">
+                            {block:Label}
+                            <span class="name">{Label}</span>
+                            {/block:Label} {Line}<br />
+                        </div>
+                    </div>
+                    {/block:Lines}
+                </div>
+                {/block:Chat}
+
+                {block:Audio}
+                <div id="album">
+                    {block:AlbumArt}
+                    <img class="albumart" src="{AlbumArtURL}">
+                    {/block:AlbumArt}
+                    <div class="audio">{AudioPlayer}</div>
+                    <div id="audioinfo">
+                        {block:TrackName}
+                        <div class="audioline">
+                            track: {TrackName}
+                        </div>
+                        {/block:TrackName}
+                        {block:Artist}
+                        <div class="audioline">
+                            artist: {Artist}
+                        </div>
+                        {/block:Artist}
+                        {block:Album}
+                        <div class="audioline">
+                            album: {Album}
+                        </div>
+                        {/block:Album}
+                        <div class="audioline">{PlayCountWithLabel}</div>
+                    </div>
+                </div>
+                {block:IfShowCaptions}{block:Caption}
+                <div class="text">{Caption}</div>{/block:Caption}{/block:IfShowCaptions}
+                {block:IfNotShowCaptions}{block:PermalinkPage}{block:Caption}
+                <div class="text">{Caption}</div>
+                {/block:Caption}{/block:PermalinkPage}{/block:IfNotShowCaptions}
+                {/block:Audio}
+
+                {block:Text}
+                {block:title}
+                <div class="title">{title}</div>
+                {/block:Title}
+                <div class="text">{body}</div>
+                {/block:Text}
+
+                {block:Answer}
+                <img class="askerportrait" src="{AskerPortraitURL-48}">
+                <span id="carrot">◂</span>
+                <div class="ask">
+                    <span class="asker">{Asker} gushed:</span>
+                    <div>{Question}</div>
+                </div>
+                <div class="text">{Answer}</div>
+                {/block:Answer}
+
+                {block:Video}
+                <div class="vid">
+                {Video-250}
+                </div>
+                {block:caption}
+                <div class="text">{caption}</div>
+                {/block:caption}
+                {/block:Video}
+                
+                {block:indexpage}
+                <div id="permalink">
+                    <a href="{Permalink}" id="plink">{NoteCountWithLabel}</a>
+                    <a href="{ReblogURL}"><span class="fa fa-heart-o" title="like"></span></a>
+                    <a href="{ReblogURL}"><span class="fa fa-refresh" title="reblog"></span></a>
+                </div>
+                {/block:indexpage}
+                
+                {block:permalinkpage}
+                {block:date}
+                <div class="perma">
+                    {NoteCountWithLabel} <br />
+                    on {MonthNumberWithZero}.{DayOfMonthWithZero}.{Year} @ {24Hour}:{Minutes} 
+                    {block:RebloggedFrom}
+                    from <a href="{ReblogParentURL}">{ReblogParentName}</a>
+                    {/block:RebloggedFrom}
+                    <br />
+                    {block:HasTags}
+                    <div class="tags">
+                        {block:tags}
+                        <a href="{tagurl}"><span class="fa fa-tag"></span> {tag}</a>
+                        <br />
+                        {/block:tags}
+                    </div>
+                    {/block:HasTags}
+                </div>
+                {block:PostNotes}
+                <div id="notecontainer">{PostNotes}</div>
+                {/block:PostNotes}
+                {/block:date}
+                {/block:permalinkpage}
+
+                </div>
+                {/block:Posts}
+            </div>
+        </div>
+    </body>
+</html>
